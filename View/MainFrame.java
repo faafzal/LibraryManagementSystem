@@ -27,7 +27,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	/*
-	 * Helper Method for repainting the screen
+	 * Helper method for repainting the screen
 	 */
 	public void revalidate(){
 		
