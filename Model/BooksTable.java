@@ -35,7 +35,7 @@ public class BooksTable extends Database{
 	                   "(ID INTEGER PRIMARY KEY  AUTOINCREMENT," +
 	                   " TITLE          TEXT    NOT NULL, " + 
 	                   " AUTHOR         TEXT    NOT NULL, " + 
-	                   " GENRE          TEXT	NOT NULL)";
+	                   " GENRE          TEXT    NOT NULL)";
 	      
 	      state.executeUpdate(create);
 	      state.close();
