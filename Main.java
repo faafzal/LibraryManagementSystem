@@ -4,8 +4,7 @@ package librarymanagementsystem;
  * This is the Main Driver
  * 
  * It creates the MainFrame (container),
- * passes it to the Home Controller,
- * and makes the frame visible
+ * passes it to a new instance of the Home Controller,
  * 
  * @author fafzal
  *
@@ -17,7 +16,6 @@ public class Main{
 
 		MainFrame frame = new MainFrame();
 		new HomeController(frame);
-		frame.setVisible(true);
 
 	}
 
