@@ -21,6 +21,8 @@ public class MainFrame extends JFrame {
 		this.setSize(600, 500);
 		//set the screen location
 		this.setLocation(475, 175);
+		//show the main frame
+		this.setVisible(true);
 		
 	}
 	
