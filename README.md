@@ -4,4 +4,4 @@ The Library Management System allows users to borrow and return books from an on
 
 By default, new users are regular users and not admin users. To create an admin user, the admin must change the admin value to YES in RegisterController.java
 
-I'm using JFrame for the front end. Each screen is a separate view, and each view has a controller. I'm using sqlite database for the back end.
+I am using JFrame for the front end. Each screen is a separate view, and each view has a controller. I am using sqlite database for the back end.
