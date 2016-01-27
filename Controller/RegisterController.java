@@ -11,7 +11,7 @@ import javax.swing.JButton;
  * @author fafzal
  *
  */
-public class RegisterController {
+public class RegisterController{
 	
 	//Global Variables
 	private MainFrame mainFrame;
