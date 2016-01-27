@@ -61,7 +61,7 @@ public class RegisterController {
 			if(id == 0){
 				
 				//if it is not registered, register the user, NO for regular user, YES for admin
-				usersTable.insertUser(first, last, user, pass, "YES");
+				usersTable.insertUser(first, last, user, pass, "NO");
 				//show success message
 				this.registerPanel.successMesage();
 				//refresh
