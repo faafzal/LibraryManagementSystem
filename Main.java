@@ -4,7 +4,7 @@ package librarymanagementsystem;
  * This is the Main Driver
  * 
  * It creates the MainFrame (container) and
- * passes it to a new instance of the Home Controller,
+ * passes it to a new instance of the Home Controller
  * 
  * @author fafzal
  *
