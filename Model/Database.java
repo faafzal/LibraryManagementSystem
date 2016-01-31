@@ -24,13 +24,13 @@ public class Database{
 		
 		try{
 			
-			Class.forName("org.sqlite.JDBC").newInstance();
-			this.conn = DriverManager.getConnection("jdbc:sqlite:libraryDB.db");
+		    Class.forName("org.sqlite.JDBC").newInstance();
+		    this.conn = DriverManager.getConnection("jdbc:sqlite:libraryDB.db");
 			
 		}catch(Exception e){
 			
-			System.out.println("Error: " + e);
-			System.exit(0);
+		     System.out.println("Error: " + e);
+		     System.exit(0);
 			
 		}
 		
@@ -41,14 +41,14 @@ public class Database{
 	 */
 	public void closeConn(){
 		
-		try {
+		try{
 			
-			this.conn.close();
+		    this.conn.close();
 			
 		} catch (SQLException e) {
 			
-			System.out.println("Error: " + e);
-			System.exit(0);
+		      System.out.println("Error: " + e);
+		      System.exit(0);
 			
 		}
 		
@@ -59,7 +59,7 @@ public class Database{
 	 */
 	public void delete(String table){
 		
-		this.openConn();
+	    this.openConn();
 		
 	    try {
 
