@@ -47,7 +47,7 @@ public class BooksController {
 	public void onBorrow(){
 		
 		//checks to see if user has selected a value, if current user is not currently borrowing the book, and user is borrowing less than five books
-		if(this.booksPanel.getBookList().getSelectedValue() != null && this.loggedUser.isInArray(this.booksPanel.getBookList().getSelectedValue().toString(), this.loggedUser.getBooks()) == false && this.loggedUser.getBooks().length < 5){
+		if(this.booksPanel.getBookList().getSelectedValue() != null && this.loggedUser.borrowing(this.booksPanel.getBookList().getSelectedValue().toString()) == false && this.loggedUser.getBooks().length < 5){
 			
 			//create user table object
 			UsersTable usersTable = new UsersTable();
