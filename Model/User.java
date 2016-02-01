@@ -52,7 +52,7 @@ public class User{
 		
 		for(int i = 0; i < arr.length; i++){
 			
-			if(arr[i].equals(val)){
+			if(arr[i].contains(val)){
 				
 				return true;
 				
