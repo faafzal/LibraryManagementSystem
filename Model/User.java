@@ -46,13 +46,13 @@ public class User{
 	}
 	
 	/*
-	 * This method checks to see if the given value is in the given array
+	 * This method checks to see if a user is already borrowing a book
 	 */
-	public boolean isInArray(String val, String[] arr){
+	public boolean borrowing(String b){
 		
-		for(int i = 0; i < arr.length; i++){
+		for(int i = 0; i < this.books.length; i++){
 			
-			if(arr[i].contains(val)){
+			if(this.books[i].contains(b)){
 				
 				return true;
 				
