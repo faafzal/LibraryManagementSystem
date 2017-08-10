@@ -17,7 +17,6 @@ import javax.swing.JTextField;
  *
  */
 public class RegisterPanel{
-	
 	//Global Variables
 	private JTextField firstField;
 	private JTextField lastField;
@@ -29,7 +28,6 @@ public class RegisterPanel{
 	private JLabel message;
 
 	public RegisterPanel(ActionListener a){
-		
 		// create a jpanel
 		this.panel = new JPanel();
 		// create layout
@@ -94,31 +92,25 @@ public class RegisterPanel{
 		this.panel.add(passwordTxt);
 		this.panel.add(this.passField);
 		this.panel.add(btnPanel);
-
 	}
 	
 	/*
 	 * Helper method to empty text fields
 	 */
 	public void emptyFields(){
-		
 		this.firstField.setText("");
 		this.lastField.setText("");
 		this.userField.setText("");
 		this.passField.setText("");
-		
 	}
 	
 	/*
 	 * This is shown to users if the registration was successful
 	 */
 	public void successMesage(){
-		
 		// If message was already set, then remove it
 		if(this.message != null){
-			
 			this.panel.remove(message);
-			
 		}
 
 		//empty fields
@@ -129,71 +121,51 @@ public class RegisterPanel{
 		this.message.setAlignmentX(Component.CENTER_ALIGNMENT);
 		//add message to the panel
 		this.panel.add(this.message);
-		
 	}
 	
 	/*
 	 * This is shown to the users if the registration was unsuccessful
 	 */
 	public void failMessage(){
-		
 		// If message was already set, then remove it
 		if(this.message != null){
-			
 			this.panel.remove(this.message);
-			
 		}
 		
 		this.emptyFields();
 		this.message = new JLabel("This username is taken.");
 		this.message.setAlignmentX(Component.CENTER_ALIGNMENT);
 		this.panel.add(this.message);
-		
 	}
 	
 	/*
 	 * Getters Below
 	 */
 	public JTextField getFirstField(){
-		
 		return this.firstField;
-		
 	}
 	
 	public JTextField getLastField(){
-		
 		return this.lastField;
-		
 	}
 	
 	public JTextField getUserField(){
-		
 		return this.userField;
-		
 	}
 	
 	public JPasswordField getPassField(){
-		
 		return this.passField;
-		
 	}
 	
 	public JButton getRegisterBtn(){
-		
 		return this.registerBtn;
-		
 	}
 	
 	public JButton getBackBtn(){
-		
 		return this.backBtn;
-		
 	}
 	
 	public JPanel getPanel(){
-		
 		return this.panel;
-		
 	}
-	
 }
