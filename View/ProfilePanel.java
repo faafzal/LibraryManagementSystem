@@ -44,7 +44,6 @@ public class ProfilePanel{
 		
 		// check if books borrowed is empty
 		if(books[0].equals("")){
-		
 			/*
 			 * if so, inform the user he can borrow up to five
 			 */
@@ -53,9 +52,7 @@ public class ProfilePanel{
 			noBooks.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 			this.mainPanel.add(noBooks);
-			
 		}else{
-			
 			/*
 			 * else show the books borrowed, and how many he is borrowing
 			 */
