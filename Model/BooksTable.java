@@ -58,22 +58,23 @@ public class BooksTable extends Database{
 		
 		//open connection
 		this.openConn();
-	    try {
-	      Statement state = this.conn.createStatement();
+		
+	        try {
+	      	      Statement state = this.conn.createStatement();
 	      
-	      String insert = "INSERT INTO BOOKS (TITLE,AUTHOR,GENRE)" +
-	                   	  "VALUES ('" +t+ "','"+a+"','"+g+"');";
-	      
-	      state.executeUpdate(insert);
-	
-	      state.close();
-	    } catch ( Exception e ) {
-	    	System.out.println("Error: " + e);
-	    	System.exit(0);
-	    }
+		      String insert = "INSERT INTO BOOKS (TITLE,AUTHOR,GENRE)" +
+					  "VALUES ('" +t+ "','"+a+"','"+g+"');";
+
+		      state.executeUpdate(insert);
+
+		      state.close();
+	    	} catch ( Exception e ) {
+	    		System.out.println("Error: " + e);
+	    		System.exit(0);
+	    	}
 	    
-	    //close connection
-	    this.closeConn();
+	    	//close connection
+	    	this.closeConn();
 	}
 	
 	/*
