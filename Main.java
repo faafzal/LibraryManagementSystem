@@ -16,7 +16,5 @@ public class Main{
 
 		MainFrame frame = new MainFrame();
 		new HomeController(frame);
-
 	}
-
 }
