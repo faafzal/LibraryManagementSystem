@@ -17,7 +17,6 @@ import javax.swing.border.EmptyBorder;
  *
  */
 public class BooksPanel{
-	
 	//Global Variables
 	private JList bookList;
 	private JButton borrowBtn;
@@ -28,7 +27,6 @@ public class BooksPanel{
 	private JPanel southPanel;
 	
 	public BooksPanel(ActionListener a, String[] titles){
-		
 		//create a new main panel
 		this.mainPanel = new JPanel();
 		//create a new layout
@@ -77,52 +75,36 @@ public class BooksPanel{
 		//add buttons
 		this.southPanel.add(this.profileBtn);
 		this.southPanel.add(this.logoutBtn);
-		
 	}
 	
 	/*
 	 * Getters Below
 	 */
 	public JList getBookList(){
-		
 		return this.bookList;
-		
 	}
 	
 	public JButton getBorrowBtn(){
-		
 		return this.borrowBtn;
-	
 	}
 	
 	public JButton getProfileBtn(){
-		
 		return this.profileBtn;
-		
 	}
 	
 	public JButton getLogoutBtn(){
-		
 		return this.logoutBtn;
-		
 	}
 	
 	public JButton getBackBtn(){
-		
 		return this.backBtn;
-		
 	}
 	
 	public JPanel getMainPanel(){
-		
 		return this.mainPanel;
-		
 	}
 	
 	public JPanel getSouthPanel(){
-		
 		return this.southPanel;
-		
 	}
-
 }
