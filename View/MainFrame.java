@@ -12,7 +12,6 @@ import javax.swing.JFrame;
 public class MainFrame extends JFrame {
 
 	public MainFrame(){
-		
 		//call the JFrame constructor, and set the title
 		super("Library");
 		//close program when user clicks escape
@@ -23,18 +22,14 @@ public class MainFrame extends JFrame {
 		this.setLocation(475, 175);
 		//show the main frame
 		this.setVisible(true);
-		
 	}
 	
 	/*
 	 * Helper Method for repainting the screen
 	 */
 	public void revalidate(){
-		
 		this.invalidate();
 		this.validate();
 		this.repaint();
-		
 	}
-	
 }
