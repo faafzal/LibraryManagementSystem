@@ -15,14 +15,12 @@ import javax.swing.border.EmptyBorder;
  *
  */
 public class HomePanel{
-	
 	//Global Variables
 	private JButton registerBtn;
 	private JButton loginBtn;
 	private JPanel panel;
 
 	public HomePanel(ActionListener a){
-		
 		//Create text
 		JLabel text = new JLabel("The Online Library");
 		//set the text's border
@@ -60,28 +58,20 @@ public class HomePanel{
 		this.panel.add(text);
 		this.panel.add(this.registerBtn);
 		this.panel.add(this.loginBtn);
-		
 	}
 	
 	/*
 	 * Getters Below
 	 */
 	public JButton getRegisterBtn(){
-		
 		return this.registerBtn;
-		
 	}
 	
 	public JButton getLoginBtn(){
-		
 		return this.loginBtn;
-		
 	}
 	
 	public JPanel getPanel(){
-		
 		return this.panel;
-		
-	}
-	
+	}	
 }
