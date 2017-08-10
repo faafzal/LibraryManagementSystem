@@ -17,7 +17,6 @@ import javax.swing.border.EmptyBorder;
  *
  */
 public class ProfilePanel{
-	
 	//Global Variables
 	private JList myBooks;
 	private JButton returnBtn;
