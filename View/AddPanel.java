@@ -16,7 +16,6 @@ import javax.swing.border.EmptyBorder;
  *
  */
 public class AddPanel{
-	
 	//Global Variables
 	private JTextField titleField;
 	private JTextField authorField;
@@ -28,7 +27,6 @@ public class AddPanel{
 	private JPanel southPanel;
 	
 	public AddPanel(ActionListener a){
-		
 		//create a main panel
 		this.mainPanel = new JPanel();
 		//set main panel layout to flow
@@ -81,58 +79,41 @@ public class AddPanel{
 		//add buttons to south panel
 		this.southPanel.add(this.profileBtn);
 		this.southPanel.add(this.logoutBtn);
-		
 	}
 	
 	/*
 	 * Getters Below
 	 */
 	public JTextField getTitleField(){
-		
 		return this.titleField;
-		
 	}
 	
 	public JTextField getAuthorField(){
-		
 		return this.authorField;
-		
 	}
 	
 	public JTextField getGenreField(){
-		
 		return this.genreField;
-		
 	}
 	
 	public JButton getEnterBtn(){
-		
 		return this.enterBtn;
-		
 	}
 	
 	public JButton getProfileBtn(){
-		
 		return this.profileBtn;
-		
 	}
 	
 	public JButton getLogoutBtn(){
-		
 		return this.logoutBtn;
-		
 	}
 	
 	public JPanel getMainPanel(){
-		
 		return this.mainPanel;
 		
 	}
 	
 	public JPanel getSouthPanel(){
-		
 		return this.southPanel;
-		
 	}
-
 }
