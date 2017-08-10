@@ -17,7 +17,6 @@ import javax.swing.JTextField;
  *
  */
 public class LoginPanel{
-	
 	//Global Variables
 	private JTextField userField;
 	private JPasswordField passField;
@@ -27,7 +26,6 @@ public class LoginPanel{
 	private JPanel panel;
 	
 	public LoginPanel(ActionListener a){
-		
 		//create new JPanel
 		this.panel = new JPanel();
 		//create box layout
@@ -80,69 +78,51 @@ public class LoginPanel{
 		this.panel.add(this.userField);
 		this.panel.add(passwordTxt);
 		this.panel.add(this.passField);
-		this.panel.add(btnPanel);
-		
+		this.panel.add(btnPanel);	
 	}
 	
 	/*
 	 * Helper method to empty fields
 	 */
 	public void emptyFields(){
-		
 		this.userField.setText("");
 		this.passField.setText("");
-		
 	}
 	
 	/*
 	 * This is shown if login is unsuccessful
 	 */
 	public void failMessage(){
-		
 		if(this.message != null){
-			
 			this.panel.remove(this.message);
-			
 		}
 		
 		this.emptyFields();
 		this.message = new JLabel("Please try again.");
 		this.message.setAlignmentX(Component.CENTER_ALIGNMENT);
 		this.panel.add(this.message);
-		
 	}
 	
 	/*
 	 * Getters Below
 	 */
 	public JTextField getUserField(){
-		
 		return this.userField;
-		
 	}
 	
 	public JPasswordField getPassField(){
-		
 		return this.passField;
-		
 	}
 	
 	public JButton getLoginBtn(){
-		
 		return this.loginBtn;
-		
 	}
 	
 	public JButton getBackBtn(){
-		
 		return this.backBtn;
-		
 	}
 	
 	public JPanel getPanel(){
-		
 		return this.panel;
-		
 	}
-
 }
