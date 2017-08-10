@@ -28,7 +28,6 @@ public class ProfilePanel{
 	private JPanel southPanel;
 	
 	public ProfilePanel(ActionListener a, String first, String last, String[] books, String isAdmin){
-		
 		//create a new main panel
 		this.mainPanel = new JPanel();
 		//create layout 
@@ -86,8 +85,7 @@ public class ProfilePanel{
 			this.returnBtn = new JButton("Return");
 			this.returnBtn.addActionListener(a);
 			this.returnBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
-			this.mainPanel.add(this.returnBtn);
-			
+			this.mainPanel.add(this.returnBtn);	
 		}
 		
 		//create a button to find more books
@@ -107,61 +105,43 @@ public class ProfilePanel{
 		
 		//if the user is an admin, add an add titles button
 		if(isAdmin.equals("YES")){
-			
 			this.addBtn = new JButton("Add Titles");
 			this.addBtn.addActionListener(a);
 			this.southPanel.add(this.addBtn);
-			
 		}
 		
 		//add logout button
 		this.southPanel.add(this.logoutBtn);
-			
 	}
 	
 	/*
 	 * Getters Below
 	 */
 	public JList getMyBooks(){
-		
 		return this.myBooks;
-		
 	}
 	
 	public JButton getReturnBtn(){
-		
 		return this.returnBtn;
-		
 	}
 	
 	public JButton getAddBtn(){
-		
 		return this.addBtn;
-		
 	}
 	
 	public JButton getFindBtn(){
-		
 		return this.findBtn;
-		
 	}
 	
 	public JButton getLogoutBtn(){
-		
 		return this.logoutBtn;
-		
 	}
 	
 	public JPanel getMainPanel(){
-		
 		return this.mainPanel;
-		
 	}
 	
 	public JPanel getSouthPanel(){
-		
 		return this.southPanel;
-		
 	}
-
 }
