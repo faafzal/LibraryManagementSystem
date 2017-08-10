@@ -17,7 +17,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 public class GenrePanel{
-	
 	//Global Variables
 	private JList genreList;
 	private JButton chooseBtn;
@@ -27,7 +26,6 @@ public class GenrePanel{
 	private JPanel southPanel;
 	
 	public GenrePanel(ActionListener a, String[] genre){
-		
 		//create a main panel
 		this.mainPanel = new JPanel();
 		//create a new layout
@@ -70,46 +68,32 @@ public class GenrePanel{
 		//add buttons to south panel
 		this.southPanel.add(this.profileBtn);
 		this.southPanel.add(this.logoutBtn);
-		
 	}
 	
 	/*
 	 * Getters Below
 	 */
 	public JButton getChooseBtn(){
-		
 		return this.chooseBtn;
-		
 	}
 	
 	public JButton getProfileBtn(){
-		
 		return this.profileBtn;
-		
 	}
 	
 	public JButton getLogoutBtn(){
-		
 		return this.logoutBtn;
-		
 	}
 	
 	public JPanel getMainPanel(){
-		
 		return this.mainPanel;
-		
 	}
 	
 	public JPanel getSouthPanel(){
-		
 		return this.southPanel;
-		
 	}
 	
 	public JList getGenreList(){
-		
 		return this.genreList;
-		
 	}
-	
 }
