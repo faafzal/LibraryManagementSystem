@@ -24,7 +24,6 @@ public class BooksTable extends Database{
 	    this.openConn();
 		
 	    try {
-
 	      Statement state = this.conn.createStatement();
 	      
 	      String create = "CREATE TABLE IF NOT EXISTS BOOKS " +
@@ -35,12 +34,9 @@ public class BooksTable extends Database{
 	      
 	      state.executeUpdate(create);
 	      state.close();
-	      
 	    } catch (Exception e ) {
-	    	
 	    	System.out.println("Error: " + e);
 	    	System.exit(0);
-	    	
 	    }
 	    
 	    this.closeConn();
