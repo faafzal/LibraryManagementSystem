@@ -12,7 +12,6 @@ import javax.swing.JButton;
  *
  */
 public class ProfileController{
-	
 	//Global Variables
 	private MainFrame mainFrame;
 	private ProfilePanel profilePanel;
