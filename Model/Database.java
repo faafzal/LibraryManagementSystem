@@ -38,7 +38,6 @@ public class Database{
 		} catch (SQLException e) {
 			System.out.println("Error: " + e);
 			System.exit(0);
-
 		}
 	}
 	
