@@ -21,25 +21,25 @@ public class BooksTable extends Database{
 	 * This method creates a books table, if there isn't one already
 	 */
 	public void createBooksTable(){
-	    this.openConn();
-		
-	    try {
-	      Statement state = this.conn.createStatement();
-	      
-	      String create = "CREATE TABLE IF NOT EXISTS BOOKS " +
-	                   "(ID INTEGER PRIMARY KEY  AUTOINCREMENT," +
-	                   " TITLE          TEXT    NOT NULL, " + 
-	                   " AUTHOR         TEXT    NOT NULL, " + 
-	                   " GENRE          TEXT    NOT NULL)";
-	      
-	      state.executeUpdate(create);
-	      state.close();
-	    } catch (Exception e ) {
-	    	System.out.println("Error: " + e);
-	    	System.exit(0);
-	    }
-	    
-	    this.closeConn();
+		this.openConn();
+
+		try {
+			Statement state = this.conn.createStatement();
+
+			String create = "CREATE TABLE IF NOT EXISTS BOOKS " +
+				"(ID INTEGER PRIMARY KEY  AUTOINCREMENT," +
+				" TITLE          TEXT    NOT NULL, " + 
+				" AUTHOR         TEXT    NOT NULL, " + 
+				" GENRE          TEXT    NOT NULL)";
+
+			state.executeUpdate(create);
+			state.close();
+		} catch (Exception e ) {
+			System.out.println("Error: " + e);
+			System.exit(0);
+		}
+
+		this.closeConn();
 	}
 	
 	/*
@@ -51,26 +51,25 @@ public class BooksTable extends Database{
 			//if it is, return (No duplicates)
 			return;
 		}
-		
+
 		//open connection
 		this.openConn();
-		
-	        try {
-	      	      Statement state = this.conn.createStatement();
-	      
-		      String insert = "INSERT INTO BOOKS (TITLE,AUTHOR,GENRE)" +
-					  "VALUES ('" +t+ "','"+a+"','"+g+"');";
 
-		      state.executeUpdate(insert);
+		try {
+			Statement state = this.conn.createStatement();
 
-		      state.close();
-	    	} catch ( Exception e ) {
-	    		System.out.println("Error: " + e);
-	    		System.exit(0);
-	    	}
-	    
-	    	//close connection
-	    	this.closeConn();
+			String insert = "INSERT INTO BOOKS (TITLE,AUTHOR,GENRE)" +
+				    "VALUES ('" +t+ "','"+a+"','"+g+"');";
+
+			state.executeUpdate(insert);
+			state.close();
+		} catch ( Exception e ) {
+			System.out.println("Error: " + e);
+			System.exit(0);
+		}
+
+		//close connection
+		this.closeConn();
 	}
 	
 	/*
@@ -78,28 +77,27 @@ public class BooksTable extends Database{
 	 */
 	public boolean containsTitle(String t){
 		boolean contains = false;
-		
+
 		this.openConn();
-		
-	    try {
-	      Statement state = this.conn.createStatement();
 
-	      ResultSet len = state.executeQuery("SELECT COUNT(*) FROM BOOKS WHERE TITLE = '"+t+"'");
-	      len.next();
-	      if(len.getInt(1) > 0){
+		try {
+			Statement state = this.conn.createStatement();
+			ResultSet len = state.executeQuery("SELECT COUNT(*) FROM BOOKS WHERE TITLE = '"+t+"'");
+			len.next();
+			
+			if(len.getInt(1) > 0){
+				contains = true;
+			}
+			
+			len.close();
+			state.close();
+		} catch ( Exception e ) {
+			System.out.println("Error: " + e);
+			System.exit(0);
+		}
 
-		  contains = true;
-
-	      }
-	      len.close();
-	      state.close();
-	    } catch ( Exception e ) {
-		System.out.println("Error: " + e);
-		System.exit(0);
-	    }
-	   
 		this.closeConn();
-		
+
 		return contains;
 	}
 	
@@ -108,35 +106,35 @@ public class BooksTable extends Database{
 	 */
 	public String[] selectTitles(String g){
 		String[] titles = null;
-		
+
 		this.openConn();
-		
-	    try {
-	      Statement state = this.conn.createStatement();
-	      
-	      ResultSet len = state.executeQuery("SELECT COUNT(*) FROM BOOKS WHERE GENRE = '"+g+"'");
-	      len.next();
-	      titles = new String[len.getInt(1)];
-	      
-	      ResultSet rs = state.executeQuery( "SELECT * FROM BOOKS WHERE GENRE = '"+g+"';");
-	      
-	      int index = 0;
-	      
-	      while ( rs.next() ) {
-	    	  titles[index] = rs.getString("title") + " By " + rs.getString("author");
-	    	  index++;
-	      }
-	      
-	      len.close();
-	      rs.close();
-	      state.close();
-	    } catch ( Exception e ) {
-	    	System.out.println("Error: " + e);
-	        System.exit(0);
-	    }
-	   
+
+		try {
+			Statement state = this.conn.createStatement();
+
+			ResultSet len = state.executeQuery("SELECT COUNT(*) FROM BOOKS WHERE GENRE = '"+g+"'");
+			len.next();
+			titles = new String[len.getInt(1)];
+
+			ResultSet rs = state.executeQuery( "SELECT * FROM BOOKS WHERE GENRE = '"+g+"';");
+
+			int index = 0;
+
+			while ( rs.next() ) {
+				titles[index] = rs.getString("title") + " By " + rs.getString("author");
+				index++;
+			}
+
+			len.close();
+			rs.close();
+			state.close();
+		} catch ( Exception e ) {
+			System.out.println("Error: " + e);
+			System.exit(0);
+		}
+
 		this.closeConn();
-		
+
 		return titles;
 	}
 	
@@ -145,37 +143,34 @@ public class BooksTable extends Database{
 	 */
 	public String[] selectAllGenres(){
 		this.openConn();
-		
-		String[] genres = null;
-		
-	    try {
 
-	      Statement state = this.conn.createStatement();
-	      
-	      ResultSet len = state.executeQuery("SELECT COUNT(*) FROM BOOKS");
-	      len.next();
-	      genres = new String[len.getInt(1)];
-	      
-	      ResultSet rs = state.executeQuery( "SELECT DISTINCT genre FROM BOOKS;" );
-	      
-	      int index = 0;
-	      
-	      while ( rs.next() ) {
-	    		  
-	    	 genres[index] = rs.getString("genre");	  
-	    	 index++;
-	       
-	      }
-	      
-	      rs.close();
-	      state.close();
-	    } catch ( Exception e ) {
-	    	System.out.println("Error: " + e);
-	        System.exit(0);
-	    }
-	   
+		String[] genres = null;
+
+		try {
+			Statement state = this.conn.createStatement();
+
+			ResultSet len = state.executeQuery("SELECT COUNT(*) FROM BOOKS");
+			len.next();
+			genres = new String[len.getInt(1)];
+
+			ResultSet rs = state.executeQuery( "SELECT DISTINCT genre FROM BOOKS;" );
+
+			int index = 0;
+
+			while ( rs.next() ) {
+				genres[index] = rs.getString("genre");	  
+				index++;
+			}
+
+			rs.close();
+			state.close();
+		} catch ( Exception e ) {
+			System.out.println("Error: " + e);
+			System.exit(0);
+		}
+
 		this.closeConn();
-		
+
 		return genres;
 	}
 }
