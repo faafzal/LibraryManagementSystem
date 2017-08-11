@@ -9,7 +9,6 @@ package librarymanagementsystem;
  *
  */
 public class User{
-	
 	//Global Variables
 	private int loggedID = 0;
 	private String firstName;
@@ -20,14 +19,12 @@ public class User{
 	private UsersTable usersTable;
 	
 	public User(int id){
-		
 		//create a new users table object
 		this.usersTable = new UsersTable();
 		// Set loggedID to id that is passed in
 		this.loggedID = id;
 		//fetch the users data
 		this.fetchData();
-		
 	}
 	
 	/*
@@ -35,29 +32,22 @@ public class User{
 	 * values
 	 */
 	public void fetchData(){
-		
 		String[] info = this.usersTable.selectUser(this.loggedID);
 		this.firstName = Character.toUpperCase(info[0].charAt(0)) + info[0].substring(1);;
 		this.lastName = Character.toUpperCase(info[1].charAt(0)) + info[1].substring(1);
 		this.username = info[2];
 		this.books = info[3].split(",");
 		this.isAdmin = info[4];
-		
 	}
 	
 	/*
 	 * This method checks to see if a user is already borrowing a book
 	 */
 	public boolean borrowing(String b){
-		
 		for(int i = 0; i < this.books.length; i++){
-			
 			if(this.books[i].contains(b)){
-				
 				return true;
-				
 			}
-			
 		}
 		
 		return false;
@@ -67,60 +57,41 @@ public class User{
 	 * This method removes a book from the books list
 	 */
 	public String removeBook(String b){
-		
 		String stringBooks = "";
 		
 		for(int i = 0; i < this.books.length; i++){
-			
 			if(this.books[i] != b){
-				
 				stringBooks += this.books[i] + ",";
-				
 			}
-			
 		}
 		
 		return stringBooks;
-		
 	}
 	
 	/*
 	 * Getters Below
 	 */
 	public int getLoggedID(){
-		
 		return this.loggedID;
-		
 	}
 	
 	public String getIsAdmin(){
-		
 		return this.isAdmin;
-		
 	}
 	
 	public String getFirstName(){
-		
 		return this.firstName;
-		
 	}
 	
 	public String getLastName(){
-		
 		return this.lastName;
-		
 	}
 	
 	public String getUsername(){
-		
 		return this.username;
-		
 	}
 	
 	public String[] getBooks(){
-		
 		return this.books;
-		
 	}
-
 }
