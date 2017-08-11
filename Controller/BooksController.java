@@ -14,7 +14,6 @@ import javax.swing.JButton;
  *
  */
 public class BooksController {
-	
 	//Global Variables
 	private MainFrame mainFrame;
 	private BooksPanel booksPanel;
