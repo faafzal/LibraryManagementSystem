@@ -19,7 +19,6 @@ public class ProfileController{
 	private User loggedUser;
 	
 	public ProfileController(MainFrame mf, User u){
-		
 		//stores the main frame that is passed through
 		this.mainFrame = mf;
 		//stores the user object that is passed through
@@ -35,17 +34,14 @@ public class ProfileController{
 		this.mainFrame.add(this.profilePanel.getSouthPanel(), BorderLayout.SOUTH);
 		//revalidate mainframe
 		this.mainFrame.revalidate();
-		
 	}
 	
 	/*
 	 * This method is called when the user clicks the return button
 	 */
 	public void onReturn(){
-		
 		// checks to make sure user has selected a book
 		if(this.profilePanel.getMyBooks().getSelectedValue() != null){
-			
 			//create new instance of user table
 			UsersTable usersTable = new UsersTable();
 			
@@ -60,48 +56,40 @@ public class ProfileController{
 			
 			//calls controller for profile class, refreshing current page
 			new ProfileController(this.mainFrame, this.loggedUser);
-		
 		}
-		
 	}
 	
 	/*
 	 * This method is called when the user clicks the add button
 	 */
 	public void onAdd(){
-		
 		//removes both panels from main frame
 		this.mainFrame.remove(this.profilePanel.getMainPanel());
 		this.mainFrame.remove(this.profilePanel.getSouthPanel());
 		
 		//calls controller for the Add Panel
 		new AddController(this.mainFrame, this.loggedUser);
-		
 	}
 	
 	/*
 	 * This method is called when the user clicks the find button
 	 */
 	public void onFind(){
-		
 		//removes both panels from main frame
 		this.mainFrame.remove(this.profilePanel.getMainPanel());
 		this.mainFrame.remove(this.profilePanel.getSouthPanel());
 		
 		//calls controller for Genre Panel
 		new GenreController(this.mainFrame, this.loggedUser);
-		
 	}
 	
 	/*
 	 * This method is called when the user clicks the logout button
 	 */
 	public void onLogout(){
-		
 		this.mainFrame.remove(this.profilePanel.getMainPanel());
 		this.mainFrame.remove(this.profilePanel.getSouthPanel());
 		new HomeController(this.mainFrame);
-		
 	}
 	
 	/*
@@ -119,27 +107,14 @@ public class ProfileController{
 			 * Checks which button is clicked, then calls appropriate methods
 			 */
 			if(btn == profilePanel.getReturnBtn()){
-				
 				onReturn();
-				
 			}else if(btn == profilePanel.getAddBtn()){
-				
 				onAdd();
-				
 			}else if(btn == profilePanel.getFindBtn()){
-				
 				onFind();
-				
 			}else if(btn == profilePanel.getLogoutBtn()){
-				
 				onLogout();
-				
 			}
-			
 		}
-		
-		
 	}
-	
-	
 }
