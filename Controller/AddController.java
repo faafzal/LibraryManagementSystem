@@ -20,7 +20,6 @@ public class AddController{
 	private User loggedUser;
 
 	public AddController(MainFrame mf, User u){
-		
 		//stores the mainframe that was passed through
 		this.mainFrame = mf;
 		//stores the user object that was passed through
@@ -37,14 +36,12 @@ public class AddController{
 		
 		//revalidates main frame
 		this.mainFrame.revalidate();
-		
 	}
 	
 	/*
 	 * This method is called when the enter button is clicked
 	 */
 	public void onEnter(){
-		
 		/*
 		 * Stores the add panel text fields in local variables
 		 */
@@ -54,7 +51,6 @@ public class AddController{
 		
 		//checks to make sure text fields are not empty
 		if(!(t.equals("") || a.equals("") || g.equals(""))){
-			
 			//creates a new books table object
 			BooksTable booksTable = new BooksTable();
 			//inserts books
@@ -66,44 +62,37 @@ public class AddController{
 			
 			//call new instance of current class
 			new AddController(this.mainFrame, this.loggedUser);
-			
 		}
-	
 	}
 	
 	/*
 	 * This method is called when the profile button is clicked
 	 */
 	public void onProfile(){
-		
 		//remove both panels
 		this.mainFrame.remove(this.addPanel.getMainPanel());
 		this.mainFrame.remove(this.addPanel.getSouthPanel());
 		
 		//call the controller for the Profile Panel
 		new ProfileController(this.mainFrame, this.loggedUser);
-		
 	}
 	
 	/*
 	 * This method is called when the logout button is clicked
 	 */
 	public void onLogout(){
-		
 		//remove both panels
 		this.mainFrame.remove(this.addPanel.getMainPanel());
 		this.mainFrame.remove(this.addPanel.getSouthPanel());
 		
 		//call the controller for the Home Panel
 		new HomeController(this.mainFrame);
-		
 	}
 	
 	/*
 	 * Helper Class for action events
 	 */
 	private class Listener implements ActionListener{
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
@@ -114,22 +103,12 @@ public class AddController{
 			 * Checks which button is clicked and calls appropriate methods
 			 */
 			if(btn == addPanel.getEnterBtn()){
-				
 				onEnter();
-				
 			}else if(btn == addPanel.getProfileBtn()){
-				
 				onProfile();
-				
 			}else if(btn == addPanel.getLogoutBtn()){
-				
 				onLogout();
-				
 			}
-			
-			
 		}
-	
 	}
-
 }
