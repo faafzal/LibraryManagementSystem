@@ -13,7 +13,6 @@ import java.sql.Statement;
  *
  */
 public class Database{
-	
 	//protected connection variable
 	protected Connection conn = null;
 
