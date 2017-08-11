@@ -13,7 +13,6 @@ import javax.swing.JButton;
  *
  */
 public class AddController{
-	
 	//Global Variables
 	private MainFrame mainFrame;
 	private AddPanel addPanel;
