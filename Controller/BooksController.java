@@ -72,7 +72,6 @@ public class BooksController {
 			//call profile controller
 			new ProfileController(this.mainFrame, this.loggedUser);
 		}
-		
 	}
 	
 	/*
@@ -134,6 +133,5 @@ public class BooksController {
 				onLogout();
 			}
 		}
-	}
-		
+	}	
 }
