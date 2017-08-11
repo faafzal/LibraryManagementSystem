@@ -12,13 +12,11 @@ import javax.swing.JButton;
  *
  */
 public class RegisterController{
-	
 	//Global Variables
 	private MainFrame mainFrame;
 	private RegisterPanel registerPanel;
 
 	public RegisterController(MainFrame mf){
-		
 		this.mainFrame = mf;
 		
 		//Create new instance of Register Panel
@@ -32,14 +30,12 @@ public class RegisterController{
 		
 		//revalidate the main frame
 		this.mainFrame.revalidate();
-		
 	}
 	
 	/*
 	 * This method is called when the register button is clicked.
 	 */
 	public void onRegister(){
-		
 		//create new instance of Users Table
 		UsersTable usersTable = new UsersTable();
 		
@@ -56,47 +52,37 @@ public class RegisterController{
 		
 		//check to makae suere the text fields are not empty
 		if(!(first.equals("") || last.equals("") || user.equals("") || pass.equals(""))){
-			
 			//check if id is 0 or if user is registered
 			if(id == 0){
-				
 				//if it is not registered, register the user, NO for regular user, YES for admin
 				usersTable.insertUser(first, last, user, pass, "NO");
 				//show success message
 				this.registerPanel.successMesage();
 				//refresh
 				this.mainFrame.revalidate();
-				
 			}else if(id > 0){
-				
 				//show fail message
 				this.registerPanel.failMessage();
 				//refresh
 				this.mainFrame.revalidate();
-				
 			}
-			
 		}
-		
 	}
 	
 	/*
 	 * This method is called when the back button is clicked
 	 */
 	public void onBack(){
-		
 		//remove current panel
 		this.mainFrame.remove(this.registerPanel.getPanel());
 		//call controller for home panel
 		new HomeController(this.mainFrame);
-		
 	}
 	
 	/*
 	 * Action Listener Helper Class
 	 */
 	private class Listener implements ActionListener{
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
@@ -107,18 +93,10 @@ public class RegisterController{
 			 * Checks which btn that was clicked, and calls appropriate method.
 			 */
 			if(btn == registerPanel.getRegisterBtn()){
-				
 				onRegister();
-				
 			}else if(btn == registerPanel.getBackBtn()){
-				
-				onBack();
-				
-			}
-			
-		}
-		
+				onBack();	
+			}	
+		}	
 	}
-	
-	
 }
