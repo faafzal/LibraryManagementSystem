@@ -13,8 +13,7 @@ import javax.swing.JButton;
  *
  */
 public class GenreController{
-	
-	//global variables
+	//Global variables
 	private MainFrame mainFrame;
 	private GenrePanel genrePanel;
 	private User loggedUser;
