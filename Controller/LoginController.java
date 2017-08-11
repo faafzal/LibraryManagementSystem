@@ -18,7 +18,6 @@ public class LoginController{
 	private LoginPanel loginPanel;
 	
 	public LoginController(MainFrame mf){
-		
 		//store main frame that is passed in
 		this.mainFrame = mf;
 		
@@ -33,14 +32,12 @@ public class LoginController{
 		
 		//revalidate the mainframe
 		this.mainFrame.revalidate();
-		
 	}
 	
 	/*
 	 * This method is called if login button is clicked
 	 */
 	public void onLogin(){
-		
 		//create an instance of UsersTable
 		UsersTable usersTable =  new UsersTable();
 		
@@ -53,10 +50,8 @@ public class LoginController{
 		
 		//Make sure text field was not empty
 		if(!(user.equals("") || pass.equals(""))){
-			
 			//check if login was a succcess
 			if(loginSuccess){
-				
 				//if it was, remove current panel
 				this.mainFrame.remove(this.loginPanel.getPanel());
 				
@@ -65,37 +60,29 @@ public class LoginController{
 				
 				//call the controller for profile panel
 				new ProfileController(this.mainFrame, u);
-				
 			}else{
-				
 				//else, show fail message
 				this.loginPanel.failMessage();
 				//revalidate main frame
-				this.mainFrame.revalidate();
-				
-			}
-			
+				this.mainFrame.revalidate();	
+			}	
 		}
-	
 	}
 	
 	/*
 	 * This method is called if back button is clicked
 	 */
 	public void onBack(){
-		
 		//remove current panel
 		this.mainFrame.remove(this.loginPanel.getPanel());
 		//call controller for home panel
 		new HomeController(this.mainFrame);
-		
 	}
 	
 	/*
 	 * Helper Class for Action Events
 	 */
 	private class Listener implements ActionListener{
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
@@ -105,19 +92,11 @@ public class LoginController{
 			/*
 			 * Checks which button was clicked and calls the appropriate method
 			 */
-			if(btn == loginPanel.getLoginBtn()){
-				
+			if(btn == loginPanel.getLoginBtn()){	
 				onLogin();
-				
 			}else if(btn == loginPanel.getBackBtn()){
-				
 				onBack();
-				
 			}
-			
-			
 		}
-		
 	}
-	
 }
