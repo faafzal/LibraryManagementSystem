@@ -12,7 +12,6 @@ import javax.swing.JButton;
  *
  */
 public class LoginController{
-	
 	//Global Variables
 	private MainFrame mainFrame;
 	private LoginPanel loginPanel;
