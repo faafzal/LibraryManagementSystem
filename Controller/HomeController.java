@@ -18,7 +18,6 @@ public class HomeController{
 	private HomePanel homePanel;
 	
 	public HomeController(MainFrame mf){
-		
 		this.mainFrame = mf;
 		
 		//Create Home Panel. This it the view for the first screen
@@ -32,38 +31,32 @@ public class HomeController{
 		
 		//Revalidate the Main Frame, basically a repaint
 		this.mainFrame.revalidate();
-		
 	}
 	
 	/*
 	 * This gets called when the register button is clicked.
 	 */
 	public void onRegister(){
-		
 		//Remove current Panel
 		mainFrame.remove(homePanel.getPanel());
 		//Call the Controller for Register Panel
 		new RegisterController(this.mainFrame);
-		
 	}
 	
 	/*
 	 * This gets called when the login button is clicked.
 	 */
 	public void onLogin(){
-		
 		//Remove current Panel
 		mainFrame.remove(homePanel.getPanel());
 		// Call Controller for Login Panel
 		new LoginController(this.mainFrame);
-		
 	}
 	
 	/*
 	 * Action Listener Helper Class
 	 */
 	private class Listener implements ActionListener{
-		
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
@@ -74,18 +67,10 @@ public class HomeController{
 			 * Checks which btn that was clicked, and calls appropriate method.
 			 */
 			if(btn == homePanel.getRegisterBtn()){
-				
 				onRegister();
-				
 			}else if(btn == homePanel.getLoginBtn()){
-				
 				onLogin();
-				
 			}
-			
 		}
-		
-		
 	}
-
 }
